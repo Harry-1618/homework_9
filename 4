@@ -1,0 +1,27 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+/*1.设计并测试一个函数，从输入中获取下n个字符（包括空白、制表
+符、换行符），把结果储存在一个数组里，它的地址被传递作为一个参数。
+2.修改并编程练习1的函数，在n个字符后停止，或在读到第1个空白、
+制表符或换行符时停止，哪个先遇到哪个停止。不能只使用scanf()。*/
+#define NUM 5 
+#include<stdio.h>
+#include<ctype.h>
+void test(char* ch, int num);
+int main()
+{
+	char ch[NUM];
+	test(ch,NUM);
+	return 0;
+
+}
+
+void test(char* ch,int num)
+{
+	int times = 0;
+	char input;
+	while ((times < num) && (input = getchar())&&isalpha(input))
+	{
+		*ch++ = input;
+		times++;
+	}
+}
